@@ -1,0 +1,25 @@
+# One family's decoder fit at 1024 px: coarse codes (encoded at 512 px), a narrowed StableMaterials decoder
+# (~1.2M parameters, 2.4 MB at fp16) fine-tuned in-library, circular padding for tiling, codes quantized at step 2.
+# In our runs the loss was still falling at 32k steps; longer fits are expected to help.
+
+code_scale = 2
+code_step = 2.0
+wrap = true
+# device = "cuda"
+
+[narrow]
+resnets = 1
+mid = false
+inner = 0.03125
+upsampler_1x1 = true
+
+[finetune]
+steps = 32000
+seed = 0
+step = 1.0
+batch = 2
+crop = 256
+lr = 5e-5
+mse_weight = 1.0
+lpips_weight = 0.1
+stat_weight = 0.033
