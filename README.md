@@ -2,6 +2,8 @@
 
 > **Work in progress.** This is the training recipe as it stands, published early. A formal methodology, an evaluation harness and results will be added later; until then, treat numbers you get from it as your own measurements.
 
+**Watch the three-minute walkthrough:** [youtu.be/XeIux4qSDhA](https://youtu.be/XeIux4qSDhA). It covers the idea, the experiments, and a first in-game test on a commercial game's textures.
+
 Games are mostly pictures. The surfaces in a game world (stone, wood, moss, metal) are each a *material*: a stack of texture images that tell the renderer what colour a surface is, which way its bumps face, how shiny it is and how high it rises. A big game ships tens of thousands of them, and they're most of what you download.
 
 This project tries a different way to ship them: teach a small neural network to redraw the game's own textures from tiny codes, and download the codes instead of the pictures. Here is the idea in five drawings.
